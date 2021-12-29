@@ -1,0 +1,11 @@
+import { JSONSchema4 } from './types';
+import { ExtendedInterface } from './types';
+export declare const jsonSchemeKey: (path: string) => string;
+export declare const genJsonSchemeConstContent: (path: string, serverUrl: string, info: ExtendedInterface, JSONSchema: JSONSchema4) => string;
+export declare const typeStr: (data: unknown) => string;
+export declare const isEmpty: (data: unknown) => boolean;
+export declare const getDefaultValue: (type: string) => any;
+export declare const warning: (content: string) => void;
+export declare const responseDataInspector: (data: any, jsonScheme: JSONSchema4, key?: any[]) => boolean;
+export declare const runner: (path: string, data: any, jsonSchema: Record<string, JSONSchema4>) => void;
+export declare const jsonSchemeFileHeader: () => string;
