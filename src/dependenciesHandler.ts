@@ -16,8 +16,8 @@ import prompt from 'prompts';
 export async function installPackage(packageName: string): Promise<any> {
   const hasLocalYarn = fs.existsSync(path.resolve(process.cwd(), 'yarn.lock'));
   const command = hasLocalYarn
-    ? `yarn add ${packageName}@latest -D --registry=http://nexus.medlinker.com/repository/group-npm/`
-    : `npm install ${packageName}@latest -D --registry=http://nexus.medlinker.com/repository/group-npm/`;
+    ? `yarn add ${packageName}@latest -D --registry=http://registry.npm.taobao.org`
+    : `npm install ${packageName}@latest -D --registry=http://registry.npm.taobao.org`;
   consola.info(`Install ${packageName}@lastest with ${hasLocalYarn ? 'yarn' : 'npm'} \n`);
   const result = await execa(command, [], {
     stdio: 'inherit',

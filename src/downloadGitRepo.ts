@@ -6,7 +6,7 @@ import { JSONSchema4, JSONSchema4TypeName } from 'json-schema';
 import * as conso from './console';
 import rm from 'rimraf';
 
-const defautlGitRepo = 'https://git.medlinker.com/foundations/api-swagger.git';
+const defautlGitRepo = 'https://git.com/foundations/api-swagger.git';
 
 /**
  * 获取下载的目录目录

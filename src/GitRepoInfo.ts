@@ -58,8 +58,7 @@ class GitRepoInfo {
     const { latest, all = [] } = await this.logs();
     return `
     /**
-     * Created By api-typescript
-     * https://wiki.medlinker.com/pages/viewpage.action?pageId=45573691
+     * Created By api-swagger
      *
      * repo: ${this.gitRepoPath}
      * branch: ${branch}

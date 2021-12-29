@@ -11,7 +11,7 @@ import type { Config, RequestConfig, RequestFunctionParams } from './types';
 export function defineConfig(config: Partial<Config>): Config {
   const finnalConfig: Config = {
     serverType: 'yapi',
-    serverUrl: 'http://yapi.int.medlinker.com',
+    serverUrl: 'http://yapi.com',
     typesOnly: false,
     target: 'typescript',
     prodEnvName: 'local',

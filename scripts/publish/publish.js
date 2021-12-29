@@ -1,13 +1,13 @@
-const run = require('./run');
-const path = require('path');
-const fs = require('fs');
-const Ora = require('ora');
-const git = require('simple-git')();
+const run = require("./run");
+const path = require("path");
+const fs = require("fs");
+const Ora = require("ora");
+const git = require("simple-git")();
 
 const spinner = new Ora({
   discardStdin: false,
-  text: '构建发布中。。。',
-  spinner: 'dots'
+  text: "构建发布中。。。",
+  spinner: "dots",
 });
 
 /**
@@ -18,17 +18,17 @@ const spinner = new Ora({
  */
 async function publish(answers) {
   const { version, preId } = answers;
-  const packageName = 'api-typescript';
+  const packageName = "api-typescript";
 
-  const targetPackageJson = path.resolve(__dirname,'../../package.json');
+  const targetPackageJson = path.resolve(__dirname, "../../package.json");
 
-  const json = JSON.parse(fs.readFileSync(targetPackageJson, 'utf-8'));
+  const json = JSON.parse(fs.readFileSync(targetPackageJson, "utf-8"));
 
   json.name = packageName;
   json.version = version;
-  json.publishConfig.registry = 'http://nexus.medlinker.com/repository/local-npm/';
+  json.publishConfig.registry = "http://registry.npm.taobao.org";
 
-  fs.writeFileSync(targetPackageJson, JSON.stringify(json, null, 2), 'utf-8');
+  fs.writeFileSync(targetPackageJson, JSON.stringify(json, null, 2), "utf-8");
 
   let publishCommand = `npm run build && npm publish`;
 
@@ -41,9 +41,9 @@ async function publish(answers) {
 
     await run(publishCommand, true);
 
-    await git.checkout('.');
+    await git.checkout(".");
 
-    spinner.succeed('发布成功');
+    spinner.succeed("发布成功");
   } catch (err) {
     spinner.fail(err.message);
   }

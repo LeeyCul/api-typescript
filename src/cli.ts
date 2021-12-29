@@ -133,7 +133,7 @@ export async function genConfig(options: OptionsType) {
         message: '接口信息服务地址',
         name: 'url',
         type: 'text',
-        initial: 'http://yapi.int.medlinker.com/'
+        initial: 'http://yapi.com/'
       }
     ]);
   }
@@ -155,7 +155,7 @@ export async function genConfig(options: OptionsType) {
   //       message: '仓库地址(SSH协议)',
   //       name: 'repository',
   //       type: 'text',
-  //       initial: 'medgit@git.medlinker.com:foundations/api-swagger.git'
+  //       initial: 'medgit@git.com:foundations/api-swagger.git'
   //     },
   //     {
   //       message: '使用的分支名',
